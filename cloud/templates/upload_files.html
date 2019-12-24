@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block cen  %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1> 上传文件 </h1>
+    {{ warning }}
+        <p>
+
+            <label for="passwordsignup" class="youpasswd" data-icon="p">选择文件: </label>
+            <input id="id_file_loc" name="file_loc" required="required" type="file" multiple="multiple"/>
+        </p>
+    <p >
+        <button type="submit">确定</button>
+    </p>
+</form>
+{{ username }}
+{% endblock cen %}
+
+</body>
+</html>

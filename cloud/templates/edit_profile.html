@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑信息</title>
+</head>
+<body>
+    <h3>编辑信息</h3>
+    <a href={% url 'templates:center' %}>个人中心</a>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p><label for="id_username">username:</label>
+        <input type="text" name="username" maxlength="150" required id="id_username" value="{{ user.username }}">
+    </p>
+    {% if usercreateform.errors.username %}
+    {{ usercreateform.errors.username }}
+    {% endif %}
+
+
+<p><label for="id_email">email:</label>
+    <input type="email" name="email" maxlength="254" id="id_email" value="{{ user.email }}">
+</p>
+<p><label for="id_birthday">Birthday:</label>
+    <input type="date" name="birthday" id="id_birthday" value="{{ user.member.birthday }}">
+</p>
+<p><label for="id_phone">Phone:</label>
+    <input type="text" name="phone" id="id_phone"  value="{{ user.member.phone }}">
+</p>
+    <button type="submit">提交</button>
+</form>
+
+</body>
+<script type="text/javascript" src="../static/js/home.js"></script>
+</html>

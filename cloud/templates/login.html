@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<body>
+
+<a href={% url 'templates:home' %}><img src={% static 'img/logo.png' %}></a>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="login_div">
+        <p>
+            <span>username:</span>
+            <input type="text" name="username" placeholder="username"/>
+        </p>
+        <p>
+            <span>password:</span>
+            <input type="password" name="password" placeholder="password"/>
+        </p>
+        <p>
+            {{ custlogin.capthca }}
+            {{ custlogin.errors.capthca }}
+        </p>
+        <button type="submit">登录</button>
+        <a href="{% url 'templates:register_cloud' %}"><button type="button">注册</button>  </a>
+    </div>
+</form>
+
+
+
+</body>
+<script type="text/javascript" src="../static/js/home.js"></script>
+</html>

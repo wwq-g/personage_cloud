@@ -1,0 +1,16 @@
+
+
+.login_div{
+    border:1px solid #000;
+    margin-top: 200px;
+    margin-left: 600px;
+    width: 500px;
+    height: 200px;
+    text-align: center;
+
+}
+img{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}

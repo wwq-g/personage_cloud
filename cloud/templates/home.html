@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block cen %}
+
+    <div class="div2">
+        {% if user.is_authenticated %}
+            <table class="table" cellspacing="25">
+                <thead>
+                <tr>
+                    <th scope="col"> 文件名</th>
+                    <th scope="col"> 文件类型</th>
+                    <th scope="col"> 修改时间</th>
+                    <th scope="col"> 文件大小</th>
+                    <th scope="col"> 操作</th>
+
+                    <th>
+                        <a href="{% url 'templates:upload' %}">
+                            <button>上传</button>
+                        </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for foo in order %}
+                    <tr>
+
+                        <td>{{ foo.1 }}</td>
+                        <td>{{ foo.4 }}</td>
+                        <td>{{ foo.5 }}</td>
+                        <td>{{ foo.3 }}</td>
+                        <form action="{% url 'templates:download' foo.1 %}" method="post">
+                            {% csrf_token %}
+                            <td>
+                                <button type="submit" class="btn btn-sm" name="btno">download</button>
+                            </td>
+                        </form>
+                        <form action="{% url 'templates:del_file' foo.0 %}" method="post">
+                            {% csrf_token %}
+                            <td>
+                                <button type="submit" class="btn btn-sm" name="btnt">delete</button>
+                            </td>
+                        </form>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <img src="static/img/bac2.jpg">
+        {% endif %}
+    </div>
+
+{% endblock cen %}
+
+</body>
+</html>

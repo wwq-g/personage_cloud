@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+
+</head>
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+<body>
+<div class="head_div1">
+    <div class="head_div2"><a href={% url 'templates:home' %}><img src={% static 'img/logo.png' %}></a></div>
+    <div class="head_div3">
+        {% if user.is_authenticated %}
+            <a href={% url 'templates:center' %}>个人中心</a>
+            <a href={% url 'templates:logout_cloud' %}>登出</a>
+
+        {% else %}
+            <a href={% url 'templates:login_cloud' %}><img src="static/img/login.png"></a>
+
+        {% endif %}
+    </div>
+</div>
+
+
+{% block cen %}
+
+{% endblock cen %}
+
+</body>
+
+<script type="text/javascript" src="../static/js/home.js"></script>
+</html>

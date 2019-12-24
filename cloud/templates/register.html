@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<body>
+
+<a href={% url 'templates:home' %}><img src={% static 'img/logo.png' %}></a>
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="div1">
+        <p><label for="id_username">Username:</label>
+            <input type="text" name="username" maxlength="150" autofocus required id="id_username">
+            {% if usercreateform.errors.username %}
+                {{ usercreateform.errors.username }}
+            {% endif %}
+        </p>
+        <p><label for="id_password1">Password:</label>
+            <input type="password" name="password1" required id="id_password1">
+            {% if usercreateform.errors.password1 %}
+                {{ usercreateform.errors.password1 }}
+            {% endif %}
+        </p>
+        <p><label for="id_password2">Password confirmation:</label>
+            <input type="password" name="password2" required id="id_password2">
+            {% if usercreateform.errors.password2 %}
+                {{ usercreateform.errors.password2 }}
+            {% endif %}
+        </p>
+        <p><label for="id_email">Email address:</label>
+            <input type="email" name="email" maxlength="254" id="id_email">
+            {% if usercreateform.errors.email %}
+                {{ usercreateform.errors.email }}
+            {% endif %}
+        </p>
+        <p><label for="id_birthday">Birthday:</label>
+            <input type="date" name="birthday" id="id_birthday">
+            {% if usercreateform.errors.birthday %}
+                {{ usercreateform.errors.birthday }}
+            {% endif %}
+        </p>
+        <p><label for="id_phone">Phone:</label>
+            <input type="text" name="phone" id="id_phone">
+            {% if usercreateform.errors.phone %}
+                {{ usercreateform.errors.phone }}
+            {% endif %}
+        </p>
+        <p>
+            {{ usercreateform.capthca }}
+            {% if usercreateform.errors.capthca %}
+                {{ usercreateform.errors.capthca }}
+            {% endif %}
+        </p>
+        <p>
+            <button type="submit">注册</button>
+        </p>
+    </div>
+</form>
+
+</body>
+<script type="text/javascript" src="../static/js/home.js"></script>
+</html>

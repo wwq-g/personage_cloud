@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+
+<link rel="stylesheet" href="{% static 'css/center.css' %}">
+
+<body>
+<div class="head_div1">
+    <a href={% url 'templates:home' %}><img src={% static 'img/logo.png' %}></a>
+    <div class="p1">
+        <a href={% url 'templates:edit_profile' %}>编辑信息</a>
+        <a href={% url 'templates:change_password' %}>修改密码</a>
+        <a href={% url 'templates:logout_cloud' %}>登出</a>
+    </div>
+</div>
+<div class="p2">
+    <p>{{ user.username }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.member.birthday }}</p>
+    <p>{{ user.member.phone }}</p>
+</div>
+</body>
+<script type="text/javascript" src="../static/js/home.js"></script>
+</html>

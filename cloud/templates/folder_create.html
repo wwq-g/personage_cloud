@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block cen %}
+        <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>新建文件夹</h3>
+        <div><span>文件夹名：</span><input type="text" name="folder_name"></div>
+        <div><span>描述：</span><input type="text" name="description"></div>
+        <button type="submit">新建</button>
+        </form>
+        {{ warning }}
+        {{ username }}
+    {% endblock cen %}
+
+</body>
+</html>

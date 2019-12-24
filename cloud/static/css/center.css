@@ -1,0 +1,23 @@
+.head_div1{
+    height: 60px;
+}
+
+img{
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin-left: 10px;
+}
+
+
+.p1{
+   float: left;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.p2{
+
+    margin-left: 100px;
+
+}
