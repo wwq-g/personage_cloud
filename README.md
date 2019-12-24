@@ -1,5 +1,7 @@
 # personage_cloud
-个人云盘
+使用django
+制作简陋个人云盘
+
 1.登录页面 
 ![image](https://github.com/wwq-g/personage_cloud/blob/master/img-folder/Snip20191225_1.png)
 2.上传页面
