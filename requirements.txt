@@ -14,7 +14,7 @@ coverage==4.5.4
 cryptography==2.8
 cssselect==1.1.0
 cycler==0.10.0
-Django==2.2.6
+Django==2.2.13
 django-appconf==1.0.3
 django-autoslug==1.9.6
 django-compressor==2.3
